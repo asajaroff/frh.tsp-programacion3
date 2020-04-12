@@ -2,5 +2,5 @@
 Example/app/bin/**
 Example/app/obj/**
 
-Clases/Ejercicios/*/bin/**
-Clases/Ejercicios/*/obj/**
+Clases/Ejercicios/**/bin/**
+Clases/Ejercicios/**/obj/**
