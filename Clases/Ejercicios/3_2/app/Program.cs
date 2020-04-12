@@ -10,26 +10,29 @@ namespace StringsCompare
     {
         static void Main(string[] args)
         {
-            char[] handler;
-            //int vocalesCount;
-            string line, largest; 
-            Console.WriteLine("Ingrese un string: \n");
+            int vocalesCount=0, vocalesMax=0;
+            string line, largest="none"; 
+            Console.WriteLine("Ingresar frase: \n");
             while ((line = Console.ReadLine()) != "FIN") 
             {
-                int vocalesCount = 0;
+                vocalesCount = 0;
                 foreach (char c in line)
                 {
                     char lowercased = char.ToLower(c);
-                    Console.WriteLine($"{lowercased}");
-                    
-                    if (lowercased == 'a' || lowercased == 'e'|| lowercased == 'i'|| lowercased == 'o'|| lowercased == 'u')
+                    if (lowercased == 'a' || lowercased == 'e'|| lowercased == 'i'|| lowercased == 'o'|| lowercased == 'u' ||
+                        lowercased == 'à' || lowercased == 'è' ||  lowercased == 'ì' ||  lowercased == 'ò' || lowercased == 'ù' ||
+                        lowercased == 'á' || lowercased == 'é' ||  lowercased == 'í' ||  lowercased == 'ó' || lowercased == 'ú' )
                     {
                         vocalesCount++;
                     }
+                    if (vocalesCount > vocalesMax)
+                    {
+                        largest = line;
+                        vocalesMax = vocalesCount;
+                    }
                 }
-                Console.WriteLine($"Cantidad de vocales: {vocalesCount}");
             }
-            //Console.WriteLine(largest);
+        Console.WriteLine($"Frase con mas vocales:\t{largest}\nCantidad de vocales: \t{vocalesCount}");
         }
     }
 }
