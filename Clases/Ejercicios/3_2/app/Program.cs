@@ -11,21 +11,25 @@ namespace StringsCompare
         static void Main(string[] args)
         {
             char[] handler;
-            int vocalesCount;
+            //int vocalesCount;
             string line, largest; 
-            while ((line = Console.ReadLine()) != 'FIN') 
+            Console.WriteLine("Ingrese un string: \n");
+            while ((line = Console.ReadLine()) != "FIN") 
             {
-                handler = line.ToCharArray();
-                for (int i = 0; i >= line.Length; i++ ) 
+                int vocalesCount = 0;
+                foreach (char c in line)
                 {
-                    if (handler[i] == 'A')
+                    char lowercased = char.ToLower(c);
+                    Console.WriteLine($"{lowercased}");
+                    
+                    if (lowercased == 'a' || lowercased == 'e'|| lowercased == 'i'|| lowercased == 'o'|| lowercased == 'u')
                     {
-                        Console.WriteLine("%i", handler[0]);
+                        vocalesCount++;
                     }
-                Console.WriteLine()
                 }
+                Console.WriteLine($"Cantidad de vocales: {vocalesCount}");
             }
-            Console.WriteLine(largest)
+            //Console.WriteLine(largest);
         }
     }
 }
