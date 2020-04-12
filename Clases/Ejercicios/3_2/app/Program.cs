@@ -32,7 +32,7 @@ namespace StringsCompare
                     }
                 }
             }
-        Console.WriteLine($"Frase con mas vocales:\t{largest}\nCantidad de vocales: \t{vocalesCount}");
+        Console.WriteLine($"Frase con mas vocales:\t{largest}\nCantidad de vocales: \t{vocalesMax}");
         }
     }
 }
